@@ -2,7 +2,7 @@ angular.module('groceryApp', [])
 		.controller('groceryController', GroceryController); 
 
 		function GroceryController() {
-			this.newItem = {};
+			this.newItem = {}; 
 			this.items = [
 				{name: "green apples"},
 				{name: "blueberries"},

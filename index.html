@@ -13,18 +13,18 @@
 <body>
 	<h1>GROCERY LIST</h1>
 	
-	<section ng-controller="groceryController as groc">
+	<section ng-controller="groceryController as grocs">
 
-		<form ng-submit="groc.createNewItem()">
+		<form ng-submit="grocs.createNewItem()">
 			<label for="new-item-name">Items:</label>
-			<input type="text" id="new-list-item" ng-model="groc.newItem.item" placeholder="ex: green apples">
+			<input type="text" id="new-list-item" ng-model="grocs.newItem.name" placeholder="ex: green apples">
 
-			<input type="submit" value="Add New Item" ng-disabled="groc.newItem.item.length <= 2 || groc.newItem.item.length == null">
+			<input type="submit" value="Add New Item" ng-disabled="grocs.newItem.name.length <= 2 || grocs.newItem.name.length == null">
 		</form>
 
 		<ol id="groceries">
-			<li ng-repeat="items in groc.items">
-				<strong>{{items.name}}</strong>
+			<li ng-repeat="item in grocs.items">
+				<strong>{{item.name}}</strong>
 			</li>
 		</ol>
 	</section>
