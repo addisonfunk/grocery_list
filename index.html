@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html ng-app="groceryApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Grocery List</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script> 
+	<script src="js/app.js"></script>
+	<script src="js/groceryController.js"></script>
+</head>
+<body>
+	<h1>GROCERY LIST</h1>
+	<section ng-controller="groceryController as groc">
+
+		<form ng-submit="groc.crewNewItem()">
+			<label for="new-item-name">Items:</label>
+			<input type="text" id="new-list-item" ng-model="groc.newItem.item" placeholder="ex: green apples">
+
+			<input type="submit" value="Add New Item" ng-disabled="groc.newItem.item.length <= 2 || groc.newItem.name.length == null">
+		</form>
+
+		<ol id="groceries">
+			<li ng-repeat
+</body>
+
+
+</html>
