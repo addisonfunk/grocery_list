@@ -5,7 +5,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Grocery List</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script> 
 	<script src="js/app.js"></script>
 	<script src="js/groceryController.js"></script>
@@ -18,15 +23,17 @@
 		<form ng-submit="grocs.createNewItem()">
 			<label for="new-item-name">Items:</label>
 			<input type="text" id="new-list-item" ng-model="grocs.newItem.name" placeholder="ex: green apples">
-
+			<br>
 			<input type="submit" value="Add New Item" ng-disabled="grocs.newItem.name.length <= 2 || grocs.newItem.name.length == null">
 		</form>
 
-		<ol id="groceries">
-			<li ng-repeat="item in grocs.items">
-				<strong>{{item.name}}</strong>
-			</li>
-		</ol>
+		<div class="groceries col-lg-7 col-md-7 col-sm-7">
+			<ol id="groceries">
+				<li ng-repeat="item in grocs.items">
+					<strong>{{item.name}}</strong>
+				</li>
+			</ol>
+		</div>
 	</section>
 
 </body>
